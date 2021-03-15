@@ -1,0 +1,2 @@
+language = "bash"
+run = "python 0316.py"
