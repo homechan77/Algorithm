@@ -14,12 +14,12 @@
 #array = [i*i for i in range(10)]
 #print(array)
 
-n = 3
-m = 4
+#n = 3
+#m = 4
 #array = [[0]*m]*n
 #array[1][1] = 5
 #print(array)
 
-array = [[0]*m for _ in range(n)]
-array[1][1] = 5
-print(array)
+#array = [[0]*m for _ in range(n)]
+#array[1][1] = 5
+#print(array)
