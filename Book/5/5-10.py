@@ -3,7 +3,7 @@ a,b = map(int, input().split())
 lista = []
 for _ in range(a):
     lista.append(list(map(int, input())))
-#lista = [list(map(int,input())) for _ in range(N)]
+#lista = [list(map(int,input())) for _ in range(a)]
 
 def dfs(x, y):
     if x <= -1 or x >= a or y <= -1 or y >= b:
