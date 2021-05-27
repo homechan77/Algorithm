@@ -1,5 +1,7 @@
+import sys
 from collections import deque
 
+input = sys.stdin.readline
 n, m, k, x = map(int, input().split())
 
 graph = [[] for _ in range(n+1)]
@@ -9,7 +11,7 @@ for _ in range(m):
     graph[a].append(b)
 
 distance = [-1] * (n+1)
-distance[1] = 0
+distance[x] = 0
 
 q = deque([x])
 while q:
