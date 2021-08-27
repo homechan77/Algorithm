@@ -1,4 +1,4 @@
-#코딩테스트 연습_2021 KAKAO BLIND RECRUITMENT
+#코딩테스트 연습_2021 KAKAO BLIND RECRUITMENT_신규 아이디 추천
 
     #1단계
     new_id = list(new_id.lower())
