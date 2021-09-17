@@ -35,7 +35,7 @@ def solution(info, query):
                 answer[new_query.index(i)] += 1 
                            
     return answer
-"""
+
 
 
 ## 2. 리스트 컴프리헨션 방법 사용 및 반복문에서 break을 사용하여 실행 시간 단축 유도 - 실패(런타임 오류, 실행시간 초과)
@@ -70,3 +70,33 @@ info = ["java backend junior pizza 150","python frontend senior chicken 210","py
 query = ["java and backend and junior and pizza 100","python and frontend and senior and chicken 200","cpp and - and senior and pizza 250","- and backend and senior and - 150","- and - and - and chicken 100","- and - and - and - 150"]
 
 print(solution(info, query))
+"""
+
+## 3. 이진 탐색을 활용한 풀이 방법
+
+def solution(info, query):
+    data = dict()
+    for a in ['cpp', 'java', 'python', '-',]:
+        for b in ['backend', 'frontend', '-']:
+            for c in ['senior', 'junior', '-']:
+                for d in ['chicken', 'pizza', '-']:
+                    data.setdefault((a,b,c,d), list())
+    
+
+    for i in info:
+        i = i.split()
+        for a in [i[0], '-']:
+            for b in [i[1], '-']:
+                for c in [i[2], '-']:
+                    for d in [i[3], '-']:
+                        data[(a,b,c,d)].append(int(i[4]))
+    
+    
+    return data = 150
+    
+info = ["java backend junior pizza 150","python frontend senior chicken 210","python frontend senior chicken 150","cpp backend senior pizza 260","java backend junior chicken 80","python backend senior chicken 50"]
+query = ["java and backend and junior and pizza 100","python and frontend and senior and chicken 200","cpp and - and senior and pizza 250","- and backend and senior and - 150","- and - and - and chicken 100","- and - and - and - 150"]
+
+print(solution(info, query))
+
+
