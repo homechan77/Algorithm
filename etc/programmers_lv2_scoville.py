@@ -1,6 +1,6 @@
 #프로그래머스_lv2_더 맵게
 """
-#정확성-런타임에러 / 효율성-시간초과
+#정확성-일부 런타임에러 / 효율성-시간초과
 def solution(scoville, K):
     count = 0
     while min(scoville) < K:
