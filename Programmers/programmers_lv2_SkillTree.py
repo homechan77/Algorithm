@@ -82,7 +82,7 @@ def solution(skill, skill_trees):
                 fin = False
                 break
 
-        if fin = True:
+        if fin == True:
             answer += 1
     
     return answer
