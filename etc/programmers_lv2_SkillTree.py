@@ -1,3 +1,4 @@
+~~~
 # 내가 생각한 구현 방법 _ 실패!!!
 def solution(skill, skill_trees):
     skill = list(skill)
@@ -25,12 +26,12 @@ def solution(skill, skill_trees):
         del skill_trees[0]
     
     return count
-~~~
 
 skill = "CBD"
 skill_trees = ["BACDE", "CBADF", "AECB", "BDA"]
 
 print(solution(skill, skill_trees))
+~~~
 
 ##--------------------------------------------------------------------------##
 # 구현 참조 1 (이해가 안된다...)
