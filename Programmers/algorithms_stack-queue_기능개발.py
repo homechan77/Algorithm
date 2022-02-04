@@ -41,6 +41,6 @@ def solution(progresses, speeds):
 
     return answer
 
-progresses = [95, 90, 99, 99, 80, 99]	
+progresses = [95, 90, 99, 99, 80, 99]
 speeds = [1, 1, 1, 1, 1, 1]
 print(solution(progresses, speeds))
