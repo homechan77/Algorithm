@@ -16,13 +16,11 @@ def solution(n, lost, reserve):
     # 좌측 우선 비교
     for k in range(len(alist)):
         if alist[k] == 0:
-            # 첫번째 학생이 체육복이 없는 경우(0) 좌측 비교 skip
-            if k != 0 and alist[k-1] == 2:
+            if k != 0 and alist[k-1] == 2: # 첫번째 학생이 체육복이 없는 경우(0) 좌측 비교 skip
                 alist[k] += 1
                 alist[k-1] -= 1
                 continue
-            # 마지막 학생은 우측 비교 skip
-            if k+1 == n:
+            if k+1 == n: # 마지막 학생은 우측 비교 skip
                 continue
             elif alist[k+1] == 2:
                 alist[k] += 1
@@ -40,6 +38,3 @@ n = 4
 lost = [3,1]
 reserve = [2,4]
 print(solution(n, lost, reserve))
-
-
-
