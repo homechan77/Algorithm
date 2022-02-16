@@ -45,13 +45,19 @@ print(solution(people, limit))
 from collections import deque
 
 def solution(people, limit):
+    # people을 오름차순으로 정렬 후 deque로 전환 - deque는 왼쪽에서 입력되어 오른쪽으로 출력되는 속성 이용
     people.sort()
     people = deque(people)
+    
     answer = []
+    
+    # 한번에 최대 2명까지 탈 수 밖에 없는 조건을 활용하여 오른쪽으로 빠져나가는 수(가장 큰 수)와 가장 왼쪽의 가장 작은 수를 더하여
+    # limit을 초과하지 않으면 두개의 숫자를 answer 리스트에 저장, 그렇지 못할 경우 빠져나가는 가장 오른쪽의 수만 저장
     while people:
         popn = people.pop()
+        
         if not people:
-            answer.append([popn])
+            answer.append([popn]) # people 리스트에 마지막 숫자가 pop하고 아무것도 남아있지 않아 비교 대상이 없는 경우 반복문 종료
             break
         elif popn + people[0] <= limit:
             answer.append([people.popleft(), popn])
