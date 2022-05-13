@@ -1,3 +1,4 @@
+# 참고: https://aliwo.github.io/swblog/python3/algorithm/thievery/#
 # dp[i] = max(dp[i-2]+money[i], dp[i-1])
 
 def solution(money):
