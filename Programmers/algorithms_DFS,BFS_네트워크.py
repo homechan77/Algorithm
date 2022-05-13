@@ -1,4 +1,7 @@
-def solution(n, computers):
+from collections import deque
+
+# DFS
+def solution_dfs(n, computers):
     visited = [False]*(n+1)
     
     graph = [0]
@@ -26,6 +29,44 @@ def solution(n, computers):
     
     return len(connectedlist)
 
+##--------------------------------------------------------------------------##
+
+# BFS
+def solution_bfs(n, computers):
+    visited = [False]*(n+1)
+
+    graph = [0]
+    for idx1, i in enumerate(computers):
+        temp = []
+        for idx2, j in enumerate(i):
+            if j == 1 and idx1 != idx2:
+                temp.append(idx2+1)
+        graph.append(temp)  
+        
+    connectedlist = []
+    
+    for idx, a in enumerate(graph):
+        temp_2 = []
+        if a== 0 or visited[idx] == True:
+            continue
+        def bfs(visited, graph, idx):
+            queue = deque()
+            queue.append(idx)
+            while queue:
+                t = queue.popleft()
+                visited[t] = True
+                temp_2.append(t)
+                for x in graph[t]:
+                    if not visited[x]:
+                        queue.append(x)
+        
+        bfs(visited, graph, idx)
+        
+        connectedlist.append(temp_2)
+    
+    return len(connectedlist)
+    
+    
 n = 3
-computers =[[1, 1, 0], [1, 1, 1], [0, 1, 1]]
-print(solution(n, computers))
+computers =[[1, 1, 0], [1, 1, 0], [0, 0, 1]]
+# print(solution_bfs(n, computers))
