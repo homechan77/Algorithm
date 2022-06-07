@@ -1,4 +1,4 @@
-from collections import defaultdict, Counter
+from collections import Counter
 
 def solution(str1, str2):
     alpha = [k for k in range(65, 91)]
