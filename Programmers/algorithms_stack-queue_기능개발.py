@@ -41,6 +41,36 @@ def solution(progresses, speeds):
 
     return answer
 
+##--------------------------------------------------------------------------##
+
+from collections import deque
+
+def solution2(progresses, speeds):
+    n = len(progresses)
+    np = []
+    for i in range(n):
+        if (100-progresses[i]) % speeds[i] != 0:
+            np.append(((100-progresses[i]) // speeds[i]) + 1)
+        else:
+            np.append((100-progresses[i]) // speeds[i])
+    
+    
+    queue = deque(np)
+    answer = []
+    while queue:
+        pop = queue.popleft()
+        if len(answer)==0 or answer[-1][0] < pop:
+            answer.append([pop])
+        else:
+            answer[-1].append(pop)
+    
+    # realanswer = [len(answer[j]) for j in range(len(answer))]
+                
+    realanswer = list(map(lambda x: len(x), answer))
+    
+    return realanswer
+
+
 progresses = [95, 90, 99, 99, 80, 99]
 speeds = [1, 1, 1, 1, 1, 1]
-print(solution(progresses, speeds))
+print(solution2(progresses, speeds))
