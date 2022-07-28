@@ -1,7 +1,7 @@
 # 공유기 설치(백준_2110)
 
 ##--------------------------------------------------------------------------##
-# # 시도1. 이진 탐색_재귀(시간 초과)
+# # 시도1. 이진 탐색_재귀
 # import sys
 
 # n, c = map(int, sys.stdin.readline().split())
@@ -27,7 +27,7 @@
 #     if check(house, mid)  < c:
 #         return binary_search(house, start, mid-1)
 #     else:
-#         return binary_search(house, start+1, end)
+#         return binary_search(house, mid+1, end)
 
 # def solution(house):
 #     mingap = 1
