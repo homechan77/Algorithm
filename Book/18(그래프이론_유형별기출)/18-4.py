@@ -52,6 +52,8 @@ def solution(n):
     for i in range(n+1):
         parent[i] = i
     
+    # information에 데이터를 저렇게 넣어도 실제로는 비용이 적은 순으로 정렬 되었기 때문에
+    # 0->1로 가는 비용을 3번 계산한다고 하더라도, 한번 계산한것은 if 문에 필터링 된다.
     answer = 0
     for inf in information:
         c, a, b = inf
