@@ -29,7 +29,9 @@ def solution(fishinfo):
                         y = i + ycor[fish[i][j][1]]
                         x = j + xcor[fish[i][j][1]]
                         if x in ([-1, 4]) or y in ([-1, 4]) or fish[y][x] == shark_now:
-                            
+                            if f not in fish:
+                                
+
     return fish
 
 print(solution(fishinfo))
