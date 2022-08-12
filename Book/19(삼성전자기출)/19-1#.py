@@ -68,6 +68,3 @@ def solution(n, space):
                 ate = 0
     
 solution(n, space)
-
-#test_linux
-#test_linux 2
