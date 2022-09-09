@@ -1,5 +1,5 @@
-# Algorithm_in_Python  
-My solutions for Algorithm problems in Python.
+# Algorithm  
+My solutions for Algorithm problems in Python and Java.
 - **BOJ**: Baekjoon_Online_Judge with https://solved.ac/ (https://www.acmicpc.net/)
 
 - **Programmers**: Programmers_Coding_Test_Practice (https://programmers.co.kr/)
