@@ -101,8 +101,8 @@ solution(tn)
 '''
 ##--------------------------------------------------------------------------##
 # 시도2. 정답자 코드 참조
-# key_point(1) visited 활용
-# key_point(2) 좌,우 회전 함수 oper_L(), oper_R()
+# key_point(1) visited 활용(logn)
+# key_point(2) 좌,우 회전 함수 "oper_L()", "oper_R()"
 
 import sys; input = sys.stdin.readline
 from collections import deque
@@ -134,7 +134,7 @@ def oper_R(n):
 
 def bfs(s, t):
     queue = deque()
-    visited = set() # logn
+    visited = set()
     queue.append((s, ""))
     visited.add(s)
     while queue:
