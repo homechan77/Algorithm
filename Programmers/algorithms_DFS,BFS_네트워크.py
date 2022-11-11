@@ -70,3 +70,35 @@ def solution_bfs(n, computers):
 n = 3
 computers =[[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 # print(solution_bfs(n, computers))
+
+##--------------------------------------------------------------------------##
+# update code(22.11.11.)
+from collections import deque
+
+def bfs(arr, n):    
+    visited = [False] * n
+    cnt = 0
+    
+    for i, x in enumerate(arr):
+        if visited[i] == False:
+            visited[i] = True
+            queue = deque(x)
+            while queue:
+                pop = queue.popleft()
+                visited[pop] = True
+                for y in arr[pop]:
+                    if visited[y] == False:
+                        queue.append(y)
+                        visited[y] = True
+            cnt += 1
+    return cnt
+
+def solution(n, computers):
+    arr = [[] for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if i != j:
+                if computers[i][j] == 1:
+                    arr[i].append(j)
+    answer = bfs(arr, n)
+    return answer
